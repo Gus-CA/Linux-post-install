@@ -72,5 +72,5 @@ flatpak update
 sudo apt autoclean
 sudo apt autoremove -y
 
-echo "Lembre-se de instalar o Anki, Stremio, e de criar os webapps do YoutubeMusic, Instagram, Whatsapp, Twitter, Notion, Pinterest."
+echo "Lembre-se de instalar o Anki, Stremio, e de criar os webapps do YoutubeMusic, Instagram, Whatsapp, Twitter, Notion e Pinterest."
 
