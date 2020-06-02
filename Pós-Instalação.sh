@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Removendo travas eventuais do apt ##
 
@@ -22,20 +22,39 @@ sudo apt update -y
 
 mkdir Downloads/programas
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P Downloads/programas
-wget -c https://dl.strem.io/linux/v4.4.106/stremio_4.4.106-1_amd64.deb -P Downloads/programas
-wget -c https://github.com/ankitects/anki/releases/download/2.1.26/anki-2.1.26-linux-amd64.tar.bz2 -P Downloads/programas
 
 ## Instalando pacotes externos ##
 
-sudo dpkg -i Downloads/programas/*.deb
-tar xjf Downloads/anki-2.1.26-linux-amd64.tar.bz2
-cd Downloads/anki-2.1.26-linux-amd64
-sudo make install
-cd
+sudo dpkg -i Downloads/programas/*.ded
 
 ## Instalando programas no apt ##
 
-sudo apt install caffeine deluge gnome-tweaks papirus-icon-theme shotwell synaptic stacer thunderbird ubuntu-restricted-extras -y
+sudo apt install deluge gnome-tweaks gparted papirus-icon-theme shotwell stacer synaptic stacer thunderbird ubuntu-restricted-extras -y
+
+## Instalando pacotes Flatpak ##
+
+flatpak install flathub io.atom.Atom -y
+flatpak install flathub com.github.bilelmoussaoui.Authenticator  -y
+flatpak install flathub com.calibre_ebook.calibre -y
+flatpak install flathub com.github.johnfactotum.Foliate -y
+flatpak install flathub com.github.tchx84.Flatseal -y
+flatpak install flathub fr.handbrake.ghb -y
+flatpak install flathub org.libreoffice.LibreOffice  -y
+flatpak install flathub net.codeindustry.MasterPDFEditor -y
+flatpak install flathub org.signal.Signal -y
+flatpak install flathub org.videolan.VLC -y
+
+## Instalndo pacotes Snap ##
+
+sudo snap install bitwarden 
+sudo snap install blender --classic 
+sudo snap install code --classic
+sudo snap install gitkraken --classic
+sudo snap install pycharm-community --classic
+sudo snap install simplenote
+sudo snap install spotify
+sudo snap install sublime-text --classic
+sudo snap install telegram-desktop
 
 ## Removendo LibreOffice (para instalar em Flatpak), Firefox e Geary ##
 
@@ -47,34 +66,11 @@ sudo apt-get remove geary* -y
 
 sudo apt --fix-broken install
 
-## Instalando pacotes Flatpak ##
-
-flatpak install flathub io.atom.Atom 
-flatpak install flathub com.github.bilelmoussaoui.Authenticator
-flatpak install flathub com.calibre_ebook.calibre
-flatpak install flathub com.github.johnfactotum.Foliate
-flatpak install flathub fr.handbrake.ghb 
-flatpak install flathub org.kde.kdenlive
-flatpak install flathub org.libreoffice.LibreOffice
-flatpak install flathub net.codeindustry.MasterPDFEditor
-flatpak install flathub org.signal.Signal
-flatpak install flathub org.videolan.VLC
-
-## Instalndo pacotes Snap ##
-
-sudo snap install bitwarden 
-sudo snap install blender --classic 
-sudo snap install code --classic
-sudo snap install noted
-sudo snap install pycharm-community --classic
-sudo snap install simplenote
-sudo snap install spotify
-sudo snap install sublime-text --classic
-sudo snap install telegram-desktop
-
 ## Finalização, atualização e limpeza##
 sudo apt update && sudo apt dist-upgrade -y
 flatpak update
 sudo apt autoclean
 sudo apt autoremove -y
+
+echo "Lembre-se de instalar o Anki, Stremio, e de criar os webapps do YoutubeMusic, Instagram, Whatsapp, Twitter, Notion, Pinterest."
 
