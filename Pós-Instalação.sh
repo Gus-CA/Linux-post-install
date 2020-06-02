@@ -20,12 +20,12 @@ sudo apt update -y
 
 ## Download e instalaçao de programas externos ##
 
-mkdir Downloads/programas
-wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P Downloads/programas
+mkdir $HOME/Downloads/programas
+wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P #HOME/Downloads/programas
 
 ## Instalando pacotes externos ##
 
-sudo dpkg -i Downloads/programas/*.ded
+sudo dpkg -i $HOME/Downloads/programas/*.ded
 
 ## Instalando programas no apt ##
 
