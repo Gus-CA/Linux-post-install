@@ -28,7 +28,7 @@ sudo dpkg -i /home/$USER/Downloads/programas/*.ded
 
 ## Instalando programas no apt ##
 
-sudo apt install beignet-dev deluge gnome-tweaks gparted nautilus-admin papirus-icon-theme stacer synaptic stacer ubuntu-restricted-extras -y
+sudo apt install beignet-dev deluge gnome-tweaks gparted gnome-sushi nautilus-admin papirus-icon-theme stacer synaptic stacer ubuntu-restricted-extras -y
 
 ## Instalando pacotes Flatpak ##
 
