@@ -9,10 +9,9 @@ sudo rm /var/cache/apt/archives/lock
 
 sudo apt update -y
 
-## Adicionando repositórios de terceiros e suporte a Snap (Papirus-Icon Theme e Caffeine) ##
+## Adicionando repositórios de terceiros (Papirus-Icon Theme) ##
 
 sudo add-apt-repository ppa:papirus/papirus-dev -y
-sudo apt install snapd -y
 
 ## Atualizando o repositório depois da adição de novos repositórios ##
 
@@ -20,46 +19,44 @@ sudo apt update -y
 
 ## Download e instalaçao de programas externos ##
 
-mkdir /home/gustavoca/Downloads/programas
-wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/gustavoca/Downloads/programas
+mkdir /home/$USER/Downloads/programas
+wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/$USER/Downloads/programas
 
 ## Instalando pacotes externos ##
 
-sudo dpkg -i /home/gustavoca/Downloads/programas/*.ded
+sudo dpkg -i /home/$USER/Downloads/programas/*.ded
 
 ## Instalando programas no apt ##
 
-sudo apt install deluge gnome-tweaks gparted papirus-icon-theme shotwell stacer synaptic stacer thunderbird ubuntu-restricted-extras -y
+sudo apt install deluge gnome-tweaks gparted papirus-icon-theme stacer synaptic stacer ubuntu-restricted-extras -y
 
 ## Instalando pacotes Flatpak ##
 
-flatpak install flathub io.atom.Atom -y
-flatpak install flathub com.github.bilelmoussaoui.Authenticator  -y
-flatpak install flathub com.calibre_ebook.calibre -y
-flatpak install flathub com.github.johnfactotum.Foliate -y
-flatpak install flathub com.github.tchx84.Flatseal -y
-flatpak install flathub fr.handbrake.ghb -y
-flatpak install flathub org.libreoffice.LibreOffice  -y
-flatpak install flathub net.codeindustry.MasterPDFEditor -y
-flatpak install flathub org.signal.Signal -y
-flatpak install flathub org.videolan.VLC -y
+flatpak update
 
-## Instalndo pacotes Snap ##
+flatpak install flathub io.atom.Atom -y ##ATOM##
+flatpak install flathub com.github.bilelmoussaoui.Authenticator -y ##AUTHENTICATOR## 
+flatpak install flathub org.blender.Blender -y ##BLENDER##
+flatpak install flathub com.bitwarden.desktop -y ##BITWARDEN##
+flatpak install flathub com.calibre_ebook.calibre -y ##CALIBRE##
+flatpak install flathub com.github.johnfactotum.Foliate -y ##FOLIATE##
+flatpak install flathub com.github.tchx84.Flatseal -y ##FLATSEAL##
+flatpak install flathub com.axosoft.GitKraken -y ##GITKRAKEN##
+flatpak install flathub org.libreoffice.LibreOffice  -y ##LIBREOFFICE##
+flatpak install flathub net.codeindustry.MasterPDFEditor -y ##MASTERPDF##
+flatpak install flathub com.jetbrains.PyCharm-Community -y ##PYCHARM##
+flatpak install flathub org.signal.Signal -y ##SIGNAL##
+flatpak install flathub com.spotify.Client -y ##SPOTIFY##
+flatpak install flathub org.gnome.Shotwell -y ##SHOTWELL##
+flatpak install flathub org.mozilla.Thunderbird -y ##THUNDERBIRD##
+flatpak install flathub org.telegram.desktop -y ##TELEGRAM##
+flatpak install flathub com.visualstudio.code -y ##VSCODE##
+flatpak install flathub com.vscodium.codium -y ##VSCODIUM##
+flatpak install flathub org.videolan.VLC -y ##VLC##
 
-sudo snap install bitwarden 
-sudo snap install blender --classic 
-sudo snap install code --classic
-sudo snap install gitkraken --classic
-sudo snap install pycharm-community --classic
-sudo snap install simplenote
-sudo snap install spotify
-sudo snap install sublime-text --classic
-sudo snap install telegram-desktop
-
-## Removendo LibreOffice (para instalar em Flatpak), Firefox e Geary ##
+## Removendo LibreOffice e Firefox (.deb)##
 
 sudo apt-get remove libreoffice* -y
-sudo apt-get remove firefox* -y
 sudo apt-get remove geary* -y
 
 ## Corrigindo possíveis pacotes quebrados ##
@@ -72,5 +69,5 @@ flatpak update
 sudo apt autoclean
 sudo apt autoremove -y
 
-echo "Lembre-se de instalar o Anki, Stremio, e de criar os webapps do YoutubeMusic, Instagram, Whatsapp, Twitter, Notion e Pinterest."
+echo "Lembre-se de instalar o Anki, o Stremio, e o Simplenote, e de criar os webapps do YoutubeMusic, Instagram, Whatsapp, Twitter, Notion e Pinterest."
 
