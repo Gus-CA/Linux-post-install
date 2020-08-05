@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+darktable,inkscape,krita,natron,gimp,shotwell, grub-customizer, gdebi ou eddy,zsh
+
+
+
 ## Removendo travas eventuais do apt ##
 
 sudo rm /var/lib/dpkg/lock-frontend
@@ -37,8 +41,7 @@ flatpak update
 flatpak install flathub io.atom.Atom -y ##ATOM##
 flatpak install flathub com.github.bilelmoussaoui.Authenticator -y ##AUTHENTICATOR## 
 flatpak install flathub org.blender.Blender -y ##BLENDER##
-flatpak install flathub com.bitwarden.desktop -y ##BITWARDEN##
-flatpak install flathub com.calibre_ebook.calibre -y ##CALIBRE##
+flatpak install flathub com.bitwarden.desktop -y ##BITWARDEN#
 flatpak install flathub com.github.johnfactotum.Foliate -y ##FOLIATE##
 flatpak install flathub com.github.tchx84.Flatseal -y ##FLATSEAL##
 flatpak install flathub com.axosoft.GitKraken -y ##GITKRAKEN##
